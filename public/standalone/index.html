@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Super Mario: Prensesi Kurtar (3 Bölümlü Macera)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="arcade-cabinet">
+    <!-- Header HUD -->
+    <header class="game-header">
+      <div class="hud-item">
+        <span class="hud-label">MARIO</span>
+        <span class="hud-value" id="hud-score">000000</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">ALTIN</span>
+        <span class="hud-value" id="hud-coins">🪙 x00</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">BÖLÜM</span>
+        <span class="hud-value" id="hud-level">1-1</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">SÜRE</span>
+        <span class="hud-value" id="hud-time">300</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">CAN</span>
+        <span class="hud-value" id="hud-lives">❤️ x3</span>
+      </div>
+    </header>
+
+    <!-- Canvas Viewport -->
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas" width="800" height="460"></canvas>
+      
+      <!-- Overlay Menus -->
+      <div id="start-overlay" class="game-overlay">
+        <div class="overlay-card">
+          <h1 class="pixel-title">SUPER MARIO</h1>
+          <h2 class="pixel-subtitle">👑 PRENSESİ KURTAR 👑</h2>
+          <p class="story-desc">
+            3 Bölümden oluşan büyük macera!<br>
+            Bölüm 1: Yeşil Vadi<br>
+            Bölüm 2: Yeraltı Mağarası & Koopalar<br>
+            Bölüm 3: Bowser'ın Lav Kalesi & Büyük Final!
+          </p>
+          <div class="controls-guide">
+            <div>⬅️ ➡️ / A, D : Hareket</div>
+            <div>⬆️ / W / BOŞLUK : Zıpla</div>
+            <div>SHIFT / X : Hızlı Koş / Ateş Et (Ateş Mario)</div>
+          </div>
+          <button id="btn-start" class="btn-retro">OYUNU BAŞLAT</button>
+        </div>
+      </div>
+
+      <div id="gameover-overlay" class="game-overlay hidden">
+        <div class="overlay-card danger">
+          <h1 class="pixel-title text-red">OYUN BİTTİ</h1>
+          <p>Bowser ve canavarlar kazandı... Ama pes etmek yok!</p>
+          <button id="btn-restart" class="btn-retro">TEKRAR DENE</button>
+        </div>
+      </div>
+
+      <div id="victory-overlay" class="game-overlay hidden">
+        <div class="overlay-card success">
+          <h1 class="pixel-title text-gold">🎉 TEBRİKLER! 🎉</h1>
+          <h2 class="pixel-subtitle">PRENSES PEACH KURTARILDI!</h2>
+          <div class="peach-avatar">💖 👑 💖</div>
+          <p class="story-desc">
+            "Teşekkürler Mario!<br>
+            Bowser'ı lavlara düşürdün ve beni zindandan kurtardın.<br>
+            Mantar Krallığı sana minnettar!"
+          </p>
+          <div id="final-stats" class="final-stats">Skor: 0</div>
+          <button id="btn-play-again" class="btn-retro">BAŞTAN OYNA</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Tool Buttons -->
+    <div class="game-toolbar">
+      <div class="toolbar-left">
+        <button id="btn-sound" class="tool-btn">🔊 Ses: AÇIK</button>
+        <button id="btn-music" class="tool-btn">🎵 Müzik: AÇIK</button>
+      </div>
+      <div class="toolbar-right">
+        <span>Bölüm Seç:</span>
+        <button class="level-jump-btn" data-level="1">1</button>
+        <button class="level-jump-btn" data-level="2">2</button>
+        <button class="level-jump-btn" data-level="3">3 (Boss)</button>
+      </div>
+    </div>
+
+    <!-- Mobile Touch Controls -->
+    <div class="mobile-controls">
+      <div class="dpad">
+        <button id="touch-left" class="dpad-btn">◀</button>
+        <button id="touch-right" class="dpad-btn">▶</button>
+      </div>
+      <div class="action-buttons">
+        <button id="touch-fire" class="action-btn btn-b">B (Ateş)</button>
+        <button id="touch-jump" class="action-btn btn-a">A (Zıpla)</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

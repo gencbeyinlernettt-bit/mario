@@ -1,0 +1,6 @@
+{
+  "name": "Super Mario: Prensesi Kurtar",
+  "description": "3 bölümlü, giderek zorlaşan ve bölüm sonunda prensesi kurtardığınız retro Mario platform oyunu. İndirilebilir saf HTML/CSS/JS paketi dahildir.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

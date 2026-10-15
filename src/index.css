@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-pixel {
+    font-family: 'Press Start 2P', monospace;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-family: 'Outfit', sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Custom retro scanline effect for arcade feeling */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+}
